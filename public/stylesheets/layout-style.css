@@ -1,0 +1,465 @@
+:root {
+    --main-background-color: #FFF9FD;
+    --text-color: #111111;
+    --main-special-color: #6d071a;
+}
+
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:focus {
+    color: var(--main-special-color);
+    text-decoration: underline;
+}
+
+body {
+    color : var(--text-color);
+    min-height: 100vh;
+    max-width: 100vw;
+    font-family: Calibri, 'Times New Roman', Times, serif, sans-serif;
+    background-color: var(--main-background-color);
+
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: nowrap;
+    min-height: calc(100vh - 44px);
+}
+
+.button {
+    padding: 5px;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: var(--main-special-color);
+
+}
+
+.sail {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(10, 10, 10, 0.5);
+    z-index: 999;
+
+    display: None;
+    cursor: pointer;
+}
+
+/* Header class and everything related */
+
+.dummy-header {
+    display : block;
+    height : 0;
+    width: 100%;
+    max-width: 100vw;
+    margin-bottom: 0;
+}
+
+.dh-visible {
+    height : 80px;
+    margin-bottom: 60px;
+    transition: None;
+}
+
+.header {
+    height: 80px;
+    padding: 20px 0 15px 0;
+    font-weight: bolder;
+    width: 100%;
+    max-width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+
+    transition: height 0.2s ease-out,
+                padding 0.2s ease-out;
+
+    margin-bottom: 60px;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 40px;
+    padding: 5px 0 5px 0;
+    box-shadow: 0 5px 5px rgba(0,0,0,.1);
+    background-color: var(--main-background-color);
+    z-index: 998;
+    transition: height 0.25s ease-in,
+                padding 0.25s ease-in;
+}
+
+.header > img:first-of-type {
+    padding-left: 5px;
+}
+
+.header > h1 {
+    align-self: center;
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.header > a {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.header-access {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-self: center;
+
+    margin: 0 5px 0 auto;
+    height: 20px;
+    width: auto;
+
+    overflow: hidden;
+}
+
+#mobile-menu-access {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    align-self: center;
+}
+
+.header-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    position: fixed;
+    top: 0px;
+    right: 0px;
+
+    width: 180px;
+    height: 100vh;
+
+    border-left: 1px solid var(--main-special-color);
+    background-color: var(--main-background-color);
+
+    z-index: 1000;
+
+    transform: translateX(100%);
+    transition: transform .25s linear;
+    will-change: transform;
+}
+
+.deployed {
+    transform: None;
+}
+
+.header-links > h1,
+.header-links > p,
+.header-links > a,
+.header-links > span {
+    margin: 5px 12px 5px 12px;
+}
+
+.header-links > span {
+    display: None;
+}
+
+.mobile-header {
+    height: 80px;
+    width: 84%;
+    margin: 0 8% 0 8%;
+    padding: 10px;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+
+    font-size: 35px;
+    color: var(--main-special-color);
+}
+
+.mobile-menu:hover {
+    cursor: pointer;
+}
+
+
+
+/* End header */
+
+/* Content class and everything related */
+
+.content {
+    align-self: center;
+    width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content > h1, h2, h3, h4, h5, h6, strong, em {
+    color: var(--main-special-color)
+}
+
+.content > h1 {
+    margin: 25px 0 40px 0;
+    font-size: 15px;
+}
+
+.content > p,
+.content > span,
+.content > em,
+.content > strong {
+    font-size: 13px;
+}
+/* End content */
+
+/* Footer class and everything related */
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+}
+
+.wrapper-go-up {
+    display: flex;
+    max-width: 100vw;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+}
+
+@keyframes visible {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.65;
+    }
+}
+
+
+.mobile-go-up {
+    width: 42px;
+    height: 42px;
+
+    display: None;
+    opacity: 0;
+    
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+
+    cursor: pointer;
+}
+
+
+@keyframes invisible {
+    from {
+      opacity: 0.65;
+    }
+    to {
+      opacity: 0;
+    }
+}
+
+.mobile-deployed {
+    display: block;
+    animation: visible 0.25s forwards;
+}
+
+
+.footer-content {
+    max-width: 100vw;
+    background-color: var(--main-special-color);
+    color: var(--main-background-color);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.footer-content > a,
+.footer-content > p {
+    color: var(--main-background-color);
+    align-self: center;
+}
+
+.footer-content > a:hover {
+    color: var(--main-background-color);
+    text-decoration: underline;
+} 
+
+
+
+/* End footer */
+
+@media only screen and (min-width:320px)  and (max-width: 499px)
+{
+
+    .header > h1 {
+        font-size: 18.5px;
+    }
+
+}
+@media only screen and (min-width:500px)  and (max-width: 1019px)
+{
+
+    .header > h1 {
+        font-size: 30px;
+    }
+
+    .header-access {
+        height: 30px;
+        width: 80px;
+    }
+
+    .content > h1 {
+        font-size: 17px;
+    }
+
+    #mobile-menu-access {
+        height : 70px;
+        width: 70px;
+        margin: 20px;
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+
+    .main-content {
+        min-height: calc(100vh - 44px);
+    }
+    
+    .dh-visible {
+        height: 115px;
+    }
+    
+    .header {
+        height: 115px;
+    }
+
+    .fixed-header {
+        height: 56px;
+    }
+
+    .header-links {
+        flex-direction: row;
+        border: none;
+
+        position: relative;
+        top: 0;
+        right: 0;
+        height: auto;
+        width: auto;
+
+        transform: None;
+    }
+
+    .header-links > h1,
+    .header-links > p,
+    .header-links > span,
+    .header-links > a {
+        display: block;
+        font-size: 20px;
+    }
+
+    .mobile-menu {
+        display: None;
+    }
+
+    .header-access {
+        height: auto;
+    }
+
+    
+    .header > h1 {
+        font-size: 30px;
+    }
+
+    .content {
+        width: 1000px;
+    }
+
+    .content > h1 {
+        font-size: 26px;
+    }
+
+    .content > p,
+    .content > span,
+    .content > em,
+    .content > strong {
+        font-size: 15px;
+    }
+
+    .mobile-go-up {
+        width: 55px;
+        height: 55px;
+    }
+
+}
+
+@media only screen and (min-width: 1500px) {
+    
+
+
+    .header > img {
+        margin-left: 50px;
+    }
+    
+    .header > h1 {
+        font-size: 40px;
+    }
+
+    .header-access {
+        margin-right: 50px;
+    }
+
+    .content > h1 {
+        font-size: 30px;
+    }
+
+    .content > p,
+    .content > span,
+    .content > em,
+    .content > strong {
+        font-size: 18px;
+    }
+
+    .header-links > h1,
+    .header-links > p,
+    .header-links > span,
+    .header-links > a {
+        display: block;
+        font-size: 24px;
+        margin: 8px 16px 8px 16px;
+    }
+}

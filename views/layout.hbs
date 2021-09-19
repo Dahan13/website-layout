@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" lang="en"/> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{title}} </title>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./stylesheets/layout-style.css"/>
+</head>
+<body>
+    <div class="main-content">
+        <div class="dummy-header"> </div>
+        <div class="header"> 
+            <div class="sail"> </div>
+            <img src="./images/logo_MPCI.svg" alt="Logo licence MPCI"/>
+            <h1> Intranet MPCI </h1>
+            <div class="header-access">
+                <div class="header-links">
+                    <img  id="mobile-menu-exit" class="mobile-menu" src="./images/mobile_menu.svg" alt="mobile menu" style="width: 60px; height: 60px"/>
+                    <a tabindex="1" href="#" class="button"> Library </a>
+                    <a tabindex="2" href="#" class="button"> Databases </a>
+                    <a tabindex="3" href="#" class="button"> About </a>
+                    <a tabindex="4" href="#" class="button"> FAQ </a>
+                    <span> | </span>
+                    <a tabindex="5" href="#" class="button"> Login </a>
+                </div>
+            </div>
+            <img id="mobile-menu-access" class="mobile-menu" src="./images/mobile_menu.svg" alt="mobile menu"/>
+        </div>
+
+        <div class=content>
+            {{{body}}}
+        </div>
+    
+    </div>
+    <div class="footer">
+        <div class="wrapper-go-up">
+            <img class="mobile-go-up" src="./images/mpci_arrow.svg" alt="To top of the page"/>
+        </div>
+        <div class="footer-content">
+            <a tabindex="6" href="#" class="button"> User agreement </a>
+            <a tabindex="7" href="#" class="button"> Cookies </a>
+            <a tabindex="8" href="#" class="button"> Confidentiality </a>
+            <p> © Licence MPCI & co 2012-2021 </p>
+        </div>
+    </div>
+    
+
+    
+</body>
+<script src='./javascripts/layout.js'> </script>
+</html>
